@@ -1,0 +1,142 @@
+body{
+    height: calc(100vh);
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.top{
+    height: 563px;
+    width: 100%;
+    background: url("../img/login-bg.jpg") no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.top .icon{
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    background: url("../img/TaskNoteLogo.png") no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 50px;
+}
+.top_nav {
+    height: 150px;
+    width: 100%;
+    background: cornflowerblue;
+    padding-left: 10px;
+}
+.top_nav>a{
+    font-size: 50px;
+    color: #fff;
+    float: left;
+    line-height: 150px;
+}
+.content{
+    height: 750px;
+    width: 100%;
+    border: 1px solid white;
+}
+.content .input-class{
+    width: 80%;
+    height: 100px;
+    margin: 100px auto;
+    border-radius: 15px 15px;
+}
+.content .icon-account{
+    height: 100%;
+    width: 10%;
+    background: url("../img/nickname.png") no-repeat center;
+    background-size: 50px 50px;
+    float: left;
+}
+.content .icon-password{
+     height: 100%;
+     width: 10%;
+     background: url("../img/密码.png") no-repeat center;
+     background-size: 50px 50px;
+     float: left;
+}
+.content .icon-code{
+    height: 100%;
+    width: 10%;
+    background: url("../img/安全.png") no-repeat center;
+    background-size: 50px 50px;
+    float: left;
+}
+.content .code_left{
+    height: 100%;
+    float: left;
+}
+.content .code_right{
+    height: 100%;
+    float: right;
+}
+.content .input-class-right{
+    height: 100%;
+    width: 90%;
+    float: right;
+    position: relative;
+}
+.content .input-class-right span{
+    color: red;
+    font-size: 30px;
+}
+
+.content input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    color: darkgray;
+    padding-left: 10px;
+}
+button[id="getCode"]{
+    position: absolute;
+    width: 300px;
+    height: 90%;
+    right: 0;
+    font-size: 50px;
+    background: cornflowerblue;
+    color: white;
+    outline: none;
+}
+.content .button-class{
+    height: 100px;
+    width: 60%;
+    margin: 0 auto;
+}
+.content .button-class button{
+    height: 100%;
+    width: 100%;
+    font-size: 60px;
+    background: cornflowerblue;
+    color: white;
+    outline: none;
+}
+.content .content-bottom{
+    height: 60px;
+    width: 80%;
+    margin: 40px auto;
+}
+.content .content-bottom>a:first-child{
+    float: left;
+    color: darkgray;
+    font-size: 40px;
+}
+.content .content-bottom>a:last-child{
+    float: right;
+    color: darkgray;
+    font-size: 40px;
+}
+
+.bottom{
+    height: 300px;
+    width: 100%;
+/*    background:green;*/
+}

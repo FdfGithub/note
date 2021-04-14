@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianjing.note.dao.IUserInfoMapper">
+    <insert id="insertUserInfo">
+        insert into user_info(id,head_url,`name`,gender,birth,constellation,motto,create_time,update_time)
+        values (#{id},#{headUrl},#{defaultValue},'保密',#{defaultValue},#{defaultValue},
+        #{defaultValue},now(),now())
+    </insert>
+
+    <select id="selectUserInfoById" resultType="com.qianjing.note.pojo.UserInfo">
+        select `name`,gender,birth,constellation,motto,head_url from user_info
+        where id = #{id}
+    </select>
+
+    <update id="updateUserInfoById">
+        update user_info set head_url = #{headUrl} where id = #{id};
+    </update>
+</mapper>

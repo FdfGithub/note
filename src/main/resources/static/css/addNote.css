@@ -1,0 +1,70 @@
+.top{
+    height: 200px;
+    width: 100%;
+    background: cornflowerblue;
+    padding: 60px 30px;
+    box-sizing: border-box;
+}
+.top a{
+    font-size: 50px;
+    color: #fff;
+}
+.top a:first-child{
+    float: left;
+}
+.top a:last-child{
+    float: right;
+}
+.content{
+    height: 1100px;
+    width: 95%;
+    margin: 10px auto;
+/*    background: darkgray;*/
+}
+.content>input{
+    height: 100px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 40px;
+    padding-left: 10px;
+    color: darkgray;
+    box-sizing: border-box;
+}
+.content .setStartTime{
+    height: 100px;
+    width: 100%;
+    font-size: 40px;
+}
+.content .setStartTime>span{
+    float: left;
+    height: 100%;
+    width: 19%;
+    text-align: center;
+    line-height: 100px;
+}
+.content .setStartTime>input{
+    float: right;
+    height: 100%;
+    width: 80%;
+    outline: none;
+    border: none;
+}
+.content textarea{
+    margin-top: 20px;
+    resize: none;
+    height: 800px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 40px;
+    padding-left: 10px;
+    color: darkgray;
+}
+.content>span{
+    height: 50px;
+    width: 100%;
+    display: block;
+    color: red;
+    font-size: 30px;
+}

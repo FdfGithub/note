@@ -1,0 +1,118 @@
+.calendar-class {
+    height: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.head {
+    height: 25%;
+    width: 100%;
+    background: cornflowerblue;
+    position: relative;
+}
+
+
+.head .head_left {
+    font-size: 40px;
+    position: absolute;
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    left: 20px;
+}
+.head .head_right {
+    font-size: 40px;
+    position: absolute;
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    right: 20px;
+}
+
+.return-class{
+    float: left;
+    width: 100%;
+/*    background: #000;*/
+}
+.return-class>a{
+    color: darkgrey;
+    font-size: 50px;
+    float: right;
+}
+
+.head a{
+    color: #FFF;
+}
+.head .date_view{
+    width: 400px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -40px;
+    margin-left: -200px;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 15px;
+    background: #fff;
+    color: cornflowerblue;
+}
+
+.content {
+    height: 80%;
+    width: 100%;
+}
+.content ul{
+    width: 90%;
+    height: 20%;
+    margin: 0 auto;
+}
+.content li{
+    float: left;
+    height: 100%;
+    width: 110px;
+    margin-left: 15px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+}
+.content_bottom span{
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 180px 180px;
+    background: red;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/*
+.search-class {
+    height: 100px;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.search-class>input{
+    height: 100%;
+    width: 74%;
+    border: solid 3px black;
+    outline: none;
+    font-size: 40px;
+    color: darkgray;
+    float: left;
+    border-radius: 15px 15px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.search-class>button{
+    height: 100%;
+    width: 25%;
+    float: right;
+    font-size: 40px;
+}*/

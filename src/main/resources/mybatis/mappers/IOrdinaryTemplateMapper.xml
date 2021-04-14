@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qianjing.note.dao.IOrdinaryTemplateMapper">
+
+
+    <insert id="insertTemplate" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        ordinary_template(template_name,`describe`,start_time,status,create_time,update_time)
+        values (#{templateName},#{describe},#{startTime},#{status},now(),now())
+    </insert>
+
+
+    <select id="selectTemplate" resultType="com.qianjing.note.pojo.template.OrdinaryTemplate">
+        select id,`describe`,start_time,status from ordinary_template where id = #{id}
+    </select>
+
+
+    <update id="updateTemplate">
+        update ordinary_template
+        <set>
+            <if test="describe!=null">
+                `describe` = #{describe},
+            </if>
+            <if test="status!=null">
+                status = #{status},
+            </if>
+            <if test="startTime!=null">
+                start_time = #{startTime},
+            </if>
+            update_time = now()
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <delete id="deleteTemplate">
+        delete from ordinary_template where id = #{id}
+    </delete>
+
+    <update id="updateAllStatus">
+        update ordinary_template set status = 1 where status = 0 and now() > start_time;
+    </update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

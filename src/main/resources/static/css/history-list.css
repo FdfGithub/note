@@ -1,0 +1,126 @@
+
+
+
+.button_nav{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+}
+.button_nav>button{
+    width: 25%;
+    height: 100%;
+    font-size: 30px;
+    background: #fff;
+    outline: none;
+    float: left;
+}
+
+
+
+.date-class{
+    height: 100px;
+    width: 400px;
+    background: cornflowerblue;
+    text-align: center;
+    margin: 100px auto 0;
+}
+.date-class>a{
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    color: #fff;
+    line-height: 100px;
+}
+.split-class{
+    height: 150px;
+    width: 200px;
+    border-left: 5px solid cornflowerblue;
+    margin-left: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*    background: #000;*/
+}
+.end-class{
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+.end-class .end-class-left{
+    float: left;
+    height: 100%;
+    width: 30%;
+    background: cornflowerblue;
+    text-align: center;
+}
+.end-class .end-class-right{
+    float: right;
+    height: 100%;
+    width: 60%;
+    background: cornflowerblue;
+    text-align: center;
+}
+.end-class a{
+    font-size: 40px;
+    color: #fff;
+    line-height: 100px;
+}
+.wall-class{
+    height: 280px;
+    width: 100%;
+}
+.top{
+    height: 280px;
+    width: 100%;
+    background: cornflowerblue;
+    position: fixed;
+}
+
+.top .icon-search{
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+    background: url("../img/search.png") no-repeat center;
+    background-size: 45px 45px;
+    float: left;
+}
+.top .search-class{
+    height: 60px;
+    width: 80%;
+    position: absolute;
+    top: 35%;
+    margin-top: -30px;
+    border-radius: 15px 15px;
+    box-sizing: border-box;
+    background: #fff;
+    left: 40px;
+}
+.top .return-class{
+    height: 60px;
+    width: 10%;
+    position: absolute;
+    top: 35%;
+    margin-top: -30px;
+    /*    background: red;*/
+    right: 40px;
+}
+.top .return-class>a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    /*    background: #000;*/
+    text-align: center;
+    line-height: 60px;
+    font-size: 40px;
+    color: #fff;
+}
+.search-class input{
+    float: right;
+    height: 100%;
+    width: 90%;
+    border-radius: 15px 15px;
+    font-size: 28px;
+    color: #999999;
+    outline: none;
+    border: none;
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianjing.note.dao.INoteMapper">
+    <resultMap id="noteMap" type="com.qianjing.note.pojo.Note">
+        <id property="id" column="id"/>
+        <result property="noteName" column="note_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <association property="ordinaryTemplate" javaType="com.qianjing.note.pojo.template.OrdinaryTemplate">
+            <id property="id" column="o_id"/>
+            <result property="describe" column="describe"/>
+            <result property="startTime" column="start_time"/>
+            <result property="status" column="status"/>
+        </association>
+    </resultMap>
+    <!--    <resultMap id="slowSearch" type="com.qianjing.pojo.Note">
+            <id property="id" column="id"/>
+            <result property="noteName" column="note_name"/>
+            <result property="createTime" column="create_time"/>
+            <result property="updateTime" column="update_time"/>
+            <association property="ordinaryTemplate" select="com.qianjing.dao.IOrdinaryTemplateMapper.selectTemplate" column="template_id">
+
+            </association>
+        </resultMap>-->
+
+    <insert id="insertNote" useGeneratedKeys="true" keyProperty="id">
+        insert into note(template_id,template_name,note_name,create_time,update_time,user_id)
+        values (#{templateId},#{templateName},#{noteName},now(),now(),#{userId})
+    </insert>
+
+    <select id="selectNotesLikeDate" resultMap="noteMap">
+        SELECT n.id,o_t.`id` AS o_id,note_name,`describe`,start_time,`status`,n.`create_time`,n.`update_time` FROM `note` AS n
+        INNER JOIN `ordinary_template` AS o_t ON n.`template_id` = o_t.`id`
+        INNER JOIN `user` as u on n.user_id = u.id
+        WHERE
+        <if test="keyword!=null">
+            (`note_name` LIKE #{keyword} OR `describe` LIKE #{keyword}) and
+        </if>
+        <if test="status!=null">
+            status = #{status} and
+        </if>
+        user_id = #{userId} and start_time like #{searchDate} ORDER BY
+        <choose>
+            <when test="status==1">
+                start_time DESC,
+            </when>
+            <otherwise>
+                start_time ASC,
+            </otherwise>
+        </choose>
+        update_time DESC,
+        create_time DESC
+    </select>
+
+    <select id="selectNotesByMonth" resultType="java.util.Date">
+        SELECT `start_time` as startTime FROM `note` AS n
+        INNER JOIN `ordinary_template` AS o_t ON n.`template_id` = o_t.`id`
+        INNER JOIN `user` AS u ON n.user_id = u.id
+        WHERE user_id = #{userId} AND start_time LIKE #{time}
+    </select>
+
+
+    <select id="selectNotesByIds" resultMap="noteMap">
+        SELECT n.id,o_t.`id` AS o_id,note_name,`describe`,start_time,`status`,n.`create_time`,n.`update_time` FROM `note` AS n
+        INNER JOIN `ordinary_template` AS o_t ON n.`template_id` = o_t.`id`
+        INNER JOIN `user` as u on n.user_id = u.id
+        WHERE u.id = #{userId} and n.id in
+        <foreach collection="ids" item="item_id" separator="," open="(" close=")">
+            #{item_id}
+        </foreach>
+        ORDER BY start_time ASC,update_time DESC,create_time DESC
+    </select>
+
+
+    <update id="updateNote">
+        update note
+        <set>
+            <if test="noteName!=null">
+                note_name = #{noteName},
+            </if>
+            update_time = now()
+        </set>
+        where id = #{id}
+    </update>
+
+
+
+    <select id="selectTemplateIdById" resultType="long">
+        select template_id from note where id = #{id}
+    </select>
+
+
+    <delete id="deleteNote">
+        delete from note where id = #{id}
+    </delete>
+
+    <select id="selectNoteName" resultType="string">
+        select note_name from note where id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,48 @@
+#server
+server:
+  port: 8080
+  context-path: /note
+
+
+spring:
+
+  #数据源配置
+  datasource:
+    username: root
+    password: Fdf@4515
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.108.186.224:3306/note?useSSL=false&characterEncoding=utf-8
+
+  #email
+  mail:
+    username: fuxiangk.sun@foxmail.com
+    password: wyzgxqvfsdwtdhef
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+#mybatis
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mappers/*.xml
+
+
+
+
+#用户头像地址
+headUrl_pre: http://39.108.186.224:8080/note/upload/
+headUri_default: default.png
+localAddress_pre: /root/note/upload/
+
+
+#headUrl_pre: http://localhost:8080/note/upload/
+#headUri_default: default.png
+#localAddress_pre: G:\项目文档\望记系统\upload\
+#MD5加密
+password:
+      salt: geelysdafaqj23ou89ZXcj@#$@#$#@KJdjklj;D../dSF.,
+
+#debug: true
+#分页配置

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="./css/base.css">
+    <link type="text/css" rel="stylesheet" href="./css/addNote.css">
+    <script type="text/javascript" src="./js/jquery/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="./js/util.js"></script>
+    <script type="text/javascript" src="./js/addNote.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="top">
+        <a href="index.html">&lt; 返 回</a>
+        <a href="#" id="addNote">完 成</a>
+    </div>
+
+
+    <div class="content">
+        <input type="text" placeholder="笔记名称" name="noteName"/>
+        <hr/>
+<!--        <span id="noteName_warning"></span>-->
+<!--        <div class="setStartTime">-->
+<!--            <span>开始时间</span>-->
+<!--            <input type="datetime-local" name="startTime" />-->
+<!--        </div>-->
+<!--        <hr/>-->
+        <span id="startTime_warning"></span>
+        <textarea name="noteDesc" placeholder="笔记描述（可选）......"></textarea>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+html {
+    color: #000;
+    background: #FFF
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before, q:after {
+    content: ''
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    *font-size: 100%
+}
+
+legend {
+    color: #000
+}
+
+a{
+    text-decoration: none;
+}
+/*全局样式*/
+.remind-class{
+    width: 80%;
+    height: 500px;
+/*    background: red;*/
+    position: absolute;
+    left: 50%;
+    margin-left: -40%;
+    top: 300px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.remind-class .remind-top{
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    font-size: 40px;
+    background: cornflowerblue;
+    line-height: 100px;
+    padding-left: 10px;
+    color: #fff;
+}
+.remind-class .remind-content{
+    width: 100%;
+    height: 60%;
+    background: #fff;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    font-size: 40px;
+    text-align: center;
+    line-height: 300px;
+}
+.remind-class .remind-bottom{
+    width: 100%;
+    height: 20%;
+    background: #efefef;
+}
+.remind-class .remind-bottom-left{
+    float: left;
+    width: 200px;
+    height: 100%;
+    font-size: 40px;
+    outline: none;
+}
+.remind-class .remind-bottom-right{
+    float: right;
+    width: 200px;
+    height: 100%;
+    font-size: 40px;
+    outline: none;
+}

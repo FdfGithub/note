@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianjing.note.dao.IHistoryMapper">
+
+
+    <insert id="insertHistory">
+        insert into history(note_name,operation,user_id,note_id,create_time,update_time)
+        values (#{noteName},#{operation},#{userId},#{noteId},now(),now())
+    </insert>
+
+    <select id="selectHistoryByUserId" resultType="com.qianjing.note.pojo.History">
+        select note_id,note_name,operation,create_time from history where user_id = #{userId}
+        order by create_time desc
+    </select>
+
+    <select id="selectHistoryByDate" resultType="com.qianjing.note.pojo.History">
+        select note_id,note_name,create_time from history
+        where user_id = #{userId}
+        <foreach collection="dates" item="date" separator=" or " open="and (" close=")">
+             create_time like #{date}
+        </foreach>
+        <if test="operation!=null">
+            and operation = #{operation}
+        </if>
+        <if test="keyword!=null">
+            and note_name like #{keyword}
+        </if>
+        order by create_time desc
+    </select>
+
+
+    <select id="selectCountByDate" resultType="int">
+        select count(*) from history where user_id = #{userId} and create_time like #{date}
+    </select>
+
+    <select id="selectCountByUserIdAndDate" resultType="int">
+        select count(*) from history where user_id = #{userId} and  #{date} >= create_time
+    </select>
+</mapper>

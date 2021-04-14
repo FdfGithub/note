@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./css/history-list.css">
+    <script type="text/javascript" src="./js/jquery/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="./js/util.js"></script>
+    <script type="text/javascript" src="./js/history-list.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="wall-class">
+    <div class="top">
+        <div class="search-class">
+            <span class="icon-search"></span>
+            <input autofocus="autofocus" type="search" id="search" />
+        </div>
+        <div class="return-class">
+            <a onclick="history.go(-1)">取消</a>
+        </div>
+
+        <div class="button_nav">
+            <button id="all">全部</button>
+            <button id="createHistory">创建记录</button>
+            <button id="updateHistory">修改记录</button>
+            <button id="deleteHistory">删除记录</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content" id="historyContent">
+
+</div>
+</body>
+</html>

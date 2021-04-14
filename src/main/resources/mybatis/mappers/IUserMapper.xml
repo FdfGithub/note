@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qianjing.note.dao.IUserMapper">
+    <sql id="sqlColumn">
+        id,user_email,user_phone,update_time
+    </sql>
+    <select id="selectUserById" resultType="com.qianjing.note.pojo.User">
+       select
+       <include refid="sqlColumn"/>
+       from user where id = #{id}
+   </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into user(
+        <choose>
+            <when test="userEmail!=null">
+                user_email,
+            </when>
+            <otherwise>
+                user_phone,
+            </otherwise>
+        </choose>
+        user_password,create_time,update_time)
+        values(
+        <choose>
+            <when test="userEmail!=null">
+                #{userEmail},
+            </when>
+            <otherwise>
+                #{userPhone},
+            </otherwise>
+        </choose>
+        #{userPassword},now(),now())
+    </insert>
+
+    <select id="selectUserByAccount" resultType="int">
+        select count(*) from user where user_email = #{account} or user_phone = #{account}
+    </select>
+
+    <select id="selectUserByAccountAndPassword" resultType="com.qianjing.note.pojo.User">
+        select
+        <include refid="sqlColumn"/>
+        from user where user_password = #{password}
+        and (user_email = #{account} or user_phone = #{account})
+    </select>
+
+    <update id="updatePasswordByAccount">
+        update user set user_password = #{password} where
+        user_email = #{account} or user_phone = #{account}
+    </update>
+
+</mapper>

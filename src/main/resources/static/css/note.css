@@ -1,0 +1,126 @@
+
+body{
+    width: 100%;
+    height: calc(100vh);
+}
+.top{
+    width: 100%;
+    height: 280px;
+    margin: 0 auto;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.button_nav{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+}
+.button_nav>button{
+    width: 25%;
+    height: 100%;
+    font-size: 30px;
+    background: #fff;
+    outline: none;
+    float: left;
+}
+.search-nav{
+    margin-top: 80px;
+    width: 100%;
+    height: 200px;
+    background: #efefef;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+.search-class{
+    height: 90px;
+    width: 95%;
+    border-radius: 15px 15px;
+    box-sizing: border-box;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.icon-search{
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+    background: url("../img/search.png") no-repeat center;
+    background-size: 45px 45px;
+    float: left;
+}
+
+.search-class input{
+    float: right;
+    height: 100%;
+    width: 90%;
+    border-radius: 15px 15px;
+    font-size: 40px;
+    color: #999999;
+    outline: none;
+    border: none;
+}
+.content{
+    height: calc(100vh - 280px);
+    width: 100%;
+    background: #efefef;
+}
+.note-class{
+    height: 20%;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    border-bottom: 30px solid #efefef;
+}
+
+.content .note-class .note_top{
+    height: 70%;
+    width: 100%;
+    border-bottom: solid 3px #efefef;
+}
+
+.note_top>textarea{
+    width: 95%;
+    height: 100%;
+    background: #fff;
+    font-size: 40px;
+    border: none;
+    outline: none;
+    resize: none;
+    color: #666;
+    margin-left: 30px;
+}
+
+
+
+.content .note-class .note_bottom{
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+.note_bottom>div{
+    position: absolute;
+    height: 100px;
+    left: 30px;
+    top: 50%;
+    margin-top: -50px;
+    font-size: 30px;
+    color: darkgrey;
+ /*   background: #000;*/
+    line-height: 100px;
+    box-sizing: border-box;
+}
+.note_bottom>button{
+    width: 140px;
+    height: 100%;
+    font-size: 30px;
+    color: #666;
+    border-radius: 10px 10px;
+    outline: none;
+    border: 1px solid #666;
+    background: #fff;
+    margin-right: 10px;
+    float: right;
+}
+
+
